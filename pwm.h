@@ -11,13 +11,17 @@
 /**
  * @brief Sets the period of the PWM based on the following formula,
  * PWM Period = (period+1)*4*(1/_XTAL_FREQ)* TIM2_PRESCALE
- * @param period The period set in the TIM2 peripheral that controls the period of the pwm.
+ * @param period The period set in the TIM2 peripheral in bits that controls the period of the pwm.
  * @warning period must not exceed 255
- * @note The duty cycle is set to 50% by default
+ * @note The duty cycle is set to 128 bits by default
  * @retval EXIT_SUCCESS is returned if PWM was activated
  */
 int openPWM(unsigned int period);
 
+/**
+ * @brief Closes the PWM on RB3
+ * @retval None
+ */
 void closePWM(void);
 
 /**
